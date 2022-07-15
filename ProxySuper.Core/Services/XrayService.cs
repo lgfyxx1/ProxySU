@@ -163,7 +163,7 @@ namespace ProxySuper.Core.Services
                     EnsureSystemEnv();
                     Progress.Percentage = 40;
 
-                    RunCmd("bash -c \"$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)\" @ install");
+                    RunCmd("bash -c \"$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)\" @ install --version 1.5.8");
                     RunCmd("systemctl restart xray");
                     Progress.Percentage = 100;
 
@@ -378,7 +378,7 @@ namespace ProxySuper.Core.Services
         private void InstallXray()
         {
             Progress.Desc = ("开始安装Xray-Core");
-            RunCmd("bash -c \"$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)\" @ install");
+            RunCmd("bash -c \"$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)\" @ install --version 1.5.8");
 
             if (!FileExists("/usr/local/bin/xray"))
             {
